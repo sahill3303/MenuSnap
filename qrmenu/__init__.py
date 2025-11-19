@@ -1,0 +1,1 @@
+# this shows that given folder is a package

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, viewport-fit=cover">
+
+    <title>MenuSnap</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- desktop view -->
+    <div class="container" id="container">
+        <!-- left -->
+        <div id="menu">
+            <div class="title">
+                <img src="static/images/QRblank.png" alt="MenuSnap logo"> 
+            </div>
+            <div class="menu-item">
+                <a href="/ht-order/">How to Order?</a>
+                <a href="mailto:ysahil0303@gmail.com">Mail us</a>
+                <a href="/contact-us/">Contact Us</a>
+                <a href="/about-us/">About Us</a>
+            </div>
+        </div>
+        <!-- middle main content -->
+        <div id="food-container">
+            <div id="header">
+                <div class="util">
+                    <!-- fa fa-cart-plus is for add to cart function -->
+                    <i class="fa fa-cart-plus" id="cart-plus"> 0 Items</i>
+                </div>
+            </div>
+            <div id="food-items" class="d-food-items">
+                
+                <!-- will show food items -->
+                
+                <div id="bestseller" class="d-bestseller">
+                    <p id="category-name">Best Sellers</p>    
+                </div>
+                <div id="meals" class="d-meals">
+                    <p id="category-name">Meals</p>    
+                </div>
+                <div id="burger" class="d-burger">
+                    <p id="category-name">Burger & Sandwiches</p>
+                </div>
+                <div id="thickshake" clas`s="d-thickshake">
+                    <p id="category-name">Thick Shakes & Beverages</p> 
+                </div>
+                <div id="chinese" class="d-chinese">
+                    <p id="category-name">Chinese Corner</p> 
+                </div>
+                <div id="south-indian" class="d-south-indian">
+                    <p id="category-name">South Indian</p>
+                </div>
+            </div>
+
+            {% comment %} Cart Page {% endcomment %}
+            
+            <div id="cart-page" class="cart-toggle">
+                <p id="cart-title">Cart Items</p>                
+                <p id="m-total-amount">Total Amount : 100</p>
+                <p id="delivery">Free 1L Bisleri if you order above ₹ 150 </p>
+                <table>
+                    <thead>
+                        <td>Item</td>
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+                <div class="btn-box">
+                        <button id="co-btn" onclick="orderop()" class="cart-btn confirm-order">Confirm Order</button>
+                    <div id="co-modal" class="modal-co">
+
+                        <!-- Modal content (Confirm Order form) -->
+                        
+                        <div class="modal-co-content">
+                          <span onclick="orderclose()" class="close-co">&times;</span>
+                          <h1>
+                            <h1>Confirm Your Order</h1>
+                            <form  class ="orderform" method="post">
+                                {% csrf_token %}
+                                {% csrf_token %}
+                                
+                                 {{ form }}
+                                
+                                
+                                <input type="submit" value="Submit Order">
+                            </form>
+                            <script>
+                                var cartItems = JSON.parse(localStorage.getItem('cart') , "[]");
+                            </script>
+                          </h1>
+                        </div>
+                      </div> 
+                    <script>
+                        
+                        {% comment %} to open order window {% endcomment %}
+                        
+                        function orderop() {
+                            console.log("Order");
+                            document.body.classList.add('modal-active');
+                            document.getElementById("co-modal").style.display = "block";
+                        }
+                        
+                        {% comment %} to close order window {% endcomment %}
+                        
+                        function orderclose() {
+                            document.body.classList.remove('modal-active');
+                            document.getElementById("co-modal").style.display = "none";
+                        }
+
+                        
+                    </script>                  
+                </div>
+            </div>
+        </div>
+        <!-- right -->
+        <div id="cart">
+            <div class="taste-header">
+                <div class="user">
+                </div>
+            </div>
+            <div id="category-list">
+                <p class="item-menu">What's on your mind ?</p>
+                <div class="border"></div>                
+            </div>
+            <div id="checkout" class="cart-toggle">
+                <p id="total-item">Total Item : 5</p>
+                <p id="total-price"></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- mobile view -->
+    <div id="mobile-view" class="mobile-view">
+        <div class="mobile-top">
+            <div class="logo-box top-menu">
+                <img src="static/images/QRblank.png" alt="" id="logo">
+                <!-- <p>Add items to cart</p> -->
+                <i class="fa fa-cart-plus" id="m-cart-plus"> 0 </i>
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="category-header" id="category-header">          
+            </div>
+            <div id="food-items" class="food-items">
+                <div id="bestseller" class="m-bestseller">
+                    <p id="category-name">Best Sellers</p>    
+                </div>
+                <div id="meals" class="m-meals">
+                    <p id="category-name">Meals</p>    
+                </div>
+                <div id="burger" class="m-burger">
+                    <p id="category-name">Burgers & Sandwiches</p>
+                </div>
+                <div id="thickshake" class="m-thickshake">
+                    <p id="category-name">Thick Shakes & Beverages</p> 
+                </div>
+                <div id="chinese" class="m-chinese">
+                    <p id="category-name">Chinese Corner</p> 
+                </div>
+                <div id="south-indian" class="m-south-indian">
+                    <p id="category-name">South Indian</p>
+                </div>
+            </div>        
+        </div>
+        <div class="mobile-footer">
+            <a href="/ht-order/">how to order?</a>
+            <a href="/contact-us/">Contact Us</a>
+            <a href="/about-us/">About Us</a>
+        </div>
+        <script src="static/index.js" type="module"></script>
+</body>
+</html>

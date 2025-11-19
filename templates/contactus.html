@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+		href="/static/cus.css">
+	<title>Contact us Page</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+			MenuSnap
+			</div>
+			<ul class="nav-links">
+				<li><a href="/">
+				Home</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<!-- banner section -->
+	<section class="banner">
+		<h1>Get in Touch With Us</h1>
+		<p>
+		We're here to answer any questions you may have.
+		</p>
+	</section>
+	<!-- Contact form -->
+	<section class="contact-form">
+		<div class="form-container">
+			<h2>Your Details</h2>
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="space-y-4">
+            <input type="hidden" name="access_key" value="a8335e1d-9e7e-43a1-9c63-c408a900319f">
+            
+				<label for="name">Name: </label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email: </label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="phone">Phone: </label>
+				<input type="tel" id="phone" name="phone">
+
+				<label for="message">Message: </label>
+				<textarea id="message" name="message" rows="4" required></textarea>
+
+				<button type="submit" class="submit-button">Submit</button>
+			</form>
+		</div>
+	</section>
+	<!-- MenuSnap contact info -->
+	<section class="contact-info">
+		<h2>Contact Information</h2>
+		<address>
+			Phone: <a href="tel:7020807574">7020-807574</a><br>
+			Email: <a href="mailto:menusnapp33@gmail.com">menusnapp33@gmail.com</a>
+		</address>
+	</section>
+</body>
+</html>

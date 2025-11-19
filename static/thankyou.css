@@ -1,0 +1,164 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.thank-you-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+.logo {
+    width: 100px; /* Adjust the logo size */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: auto;
+    margin-bottom: 20px; /* Space between logo and heading */
+}
+h1 {
+    font-size: 32px;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 18px;
+    color: #555;
+}
+.order-details {
+    margin-top: 30px;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.order-details h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.order-details p {
+    font-size: 16px;
+    color: #555;
+}
+.order-details span {
+    font-weight: bold;
+    color: crimson;
+}
+.btn-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+button {
+    background-color: crimson;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: rgb(161, 14, 44);
+}
+button:active {
+    background-color: rgb(78, 7, 21);
+}
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .thank-you-box {
+        padding: 20px;
+        width: 90%; /* Makes the box take up more space on smaller screens */
+    }
+
+    .logo {
+        width: 120px; /* Adjust logo size on smaller screens */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .order-details h3 {
+        font-size: 18px;
+    }
+
+    .order-details p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-box button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+@media (max-width: 480px) {
+    .thank-you-box {
+        padding: 15px;
+        width: 95%; /* Even smaller screen width */
+    }
+
+    .logo {
+        width: 100px; /* Smaller logo for very small screens */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .order-details h3 {
+        font-size: 16px;
+    }
+
+    .order-details p {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+html{
+    height: 100%;    
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    background-color: #f3efe4; /* Soft background for the body */
+}
+.container{
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    overflow: hidden;
+}
+#menu{
+    background: whitesmoke;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the sidebar */
+    padding: 15px;
+}
+.title{
+    padding: 30px 30px;
+    text-align: center;
+}
+#imglogo {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: auto;
+    margin-bottom: 20px; /* Space between logo and heading */
+}
+#menu img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    margin-top: 0px;
+    transition: transform 0.3s ease; /* Smooth image scale on hover */
+}
+.title p{
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: indianred;
+    margin: 10px 0;
+}
+.border{
+    width: 80px;
+    height: 4px;
+    margin: 15px auto;
+    border-radius: 2px;
+    background: coral;
+}
+.menu-item a{
+    display: block;
+    background-color: #f5cac5;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: 'Cambria', serif;
+    margin: 12px 15px;
+    color: #272a2b; /* Subtle gray */
+    font-weight: 300;
+}
+.menu-item a:hover{
+    color: #d2e4f6; /* Dark text on hover */
+    background-color: #e74c3c; /* Red background on hover */
+    
+}
+#food-items{
+    background: #ffffff;
+    overflow: auto;
+    height: calc(100vh - 86px);
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for header */
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.cart-toggle{
+    display: block;
+}
+.util i,.user i{
+    font-size: 18px;
+    margin: 0 16px;
+    border: 1px solid #e74c3c;
+    padding: 8px 16px;
+    color: #e74c3c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+
+}
+.util i:active,
+.user i:active {
+    color: white;
+    background: #e74c3c;
+}
+#bestseller #item-card,#burger #item-card{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffddd9; /* Soft red background */
+    transition: transform 0.3s ease;
+}
+#meals #item-card,#thickshake #item-card{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffddd9; /* Soft green background */
+    transition: transform 0.3s ease;
+}
+#chinese #item-card,#south-indian #item-card{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffddd9; /* Soft blue background */
+    transition: transform 0.3s ease;
+}
+#category-list{
+    justify-content: space-between;
+    padding: 10px;
+}
+#category-name,.item-menu{
+    margin: 10px;
+    font-size: 35px;
+    color: #e74c3c; /* Red color */
+    font-family: 'Georgia', serif;
+}
+#item-card{
+    width: 180px;
+    height: 220px;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background: #f8f8f8;
+    cursor: pointer;
+    transition: 0.3s transform ease-in-out, background-color 0.3s ease;
+}
+#item-card:hover {
+    background: #f2f2f2; /* Light background on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+#item-card:hover img{
+    transform: scale(1.2);
+}
+#card-top{
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-between;
+}
+#rating{
+    padding: 7px;
+    color: white;
+    background: #16a802; /* Green color */
+    font-size: 14px;
+    border-radius: 15px;
+}
+.d,
+.fa-cart-plus {
+    padding: 6px;
+    border: 1px solid #e74c3c;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+.fa-cart-plus:hover{
+    /* border: 1px solid #000000; */
+    background: #ff3131;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: cubic-bezier();
+}
+.toggle-heart{
+background: orangered;
+color: white; 
+}
+#item-card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.5s all ease-in-out;
+}
+#item-name{
+    margin: 5px 0;
+    font-weight: 600;
+    color: #2c3e50; /* Dark text for item name */
+    font-size: 15px;
+}
+#item-price{
+    margin: 0;
+    color: #2e1b1b; /* Darker color for price */
+    font-weight: 500;
+    font-size: 18px;
+}
+.food-items{
+    display: none;
+}
+.cart-toggle{
+    display: none;
+}
+#cart-page{
+    background: #ffffff;
+    margin: 40px 10px;
+    padding: 20px 30px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+#cart-title{
+    font-size: 35px;
+    margin: 0;
+    color: #e74c3c; /* Red color */
+}
+#cart-page table{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+#cart-page table thead td{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.cart-btn{
+    outline: none;
+    border: none;
+    background: #e74c3c; /* Red button */
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    bottom: 30px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+.cart-btn:hover {
+    background: #c0392b; /* Darker red on hover */
+}
+#cart-page table tbody td{
+    padding: 10px 0;
+    font-size: 20px;
+}
+#cart-page table tbody button{
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background: lightcoral; /* Golden button color */
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+#cart-page table tbody button:hover {
+    background: #e67e22; /* Darker golden button */
+}
+#cart-page table tbody img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+#checkout{
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 10px 20px;
+}
+#checkout p{
+    margin: 15px 0;
+    float: left;
+}
+#total-price,#total-item{
+    font-size: 25px;
+    color: #e74c3c;
+}
+#delivery{
+    font-size: 20px;
+    color: limegreen;
+}
+#cart{
+    background: whitesmoke;
+    padding-right: 30px;
+    overflow-y: scroll;
+}
+.item-menu{
+    margin: 0;
+    font-size: 30px;
+    margin-top: 40px;
+    color: indianred;
+    background: whitesmoke;   
+}
+.list-card{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.list-card:hover{
+    background: rgb(255, 216, 222);
+}
+.list-card:hover img{
+    transition: 0.5s all ease-in-out;
+    transform: scale(1.2);
+}
+.list-card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.list-name{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(94, 43, 43);
+}
+.taste-header{
+    padding-top: 40px;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background: whitesmoke;
+}
+#mobile-view{
+    display: none;
+}
+#bestseller{
+    margin-top: 10px;
+    
+}
+#m-total-amount{
+    display: none;
+}
+html, body {
+    height: 100%;
+    overflow: auto;
+}
+.modal-co {
+    height: auto;
+    max-height: 100%; /* Allow adjustment for keyboards */
+}
+
+@media screen and (max-width : 800px) and (-webkit-min-device-pixel-ratio: 2){
+    .container{
+        display: none;
+    }
+    #mobile-view{
+        display: grid;
+        grid-template-rows: 120px 1fr 50px;
+        height: 100%;
+        overflow: hidden;   
+        width: 100vw;
+    }
+    .mobile-top{
+        padding: 25px;
+        background: white;
+        z-index: 1;
+    }
+    .mobile-top #m-cart-plus{
+        border: rgb(204, 71, 71) 1px solid;
+        border-radius: 50px;
+        padding-right: 8px;
+        /* display: contents; */
+        overflow: visible;
+    }
+    .mobile-top #m-cart-plus:hover{
+        transition: 1s;
+        border-color: #DAFDBC;
+    }
+    .mobile-top p{
+        margin-right: 60px;
+        font-size: smaller;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    } 
+    .item-container{
+        overflow-y: scroll;
+    }
+    .logo-box,.top-menu{
+        display: flex;
+        align-items: center;
+    }
+    #logo{
+        width: 90px;
+        height: 70px;
+    }
+    .logo-box {
+        font-size: 18px;
+        width: 150px;
+        color: crimson;
+        text-transform: capitalize;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .top-menu{
+          color: indianred;
+    }
+    .top-menu i{
+        font-size: 20px;
+        cursor: pointer;
+        padding: 12px 5px ;
+        border-radius: 50%;
+    }
+    p#notif{
+        padding-top: 20px;
+        font-family: aclonica;
+        text-align: center;
+        text-decoration: underline;
+        color: indianred;
+        font-size: small;
+    }
+    p#delivery{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+        text-align: center;color: rgb(96, 205, 92);
+        font-size: small;
+    }
+    .m-cart-toggle{
+        color: white;
+        background: lightcoral;
+    }
+    .category-header{
+        display: flex;
+        width: 100vw;
+        overflow-x: scroll;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 1;
+        border-bottom: 1px solid rgb(219, 219, 219);
+        margin: 0;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    .toggle-category{
+        display: none;
+        position: relative;
+    }
+    .list-card{
+        margin: 5px 10px;
+        text-align: center;
+    }
+    .list-card img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .list-card:hover{
+        background: none;
+    }
+    .list-card:hover img{
+        transform: none;
+        transition: none;
+    }
+    .list-name{
+        margin: 5px 0;
+        color: coral;
+        width: max-content;
+        font-size: 16px;
+    }
+    #food-items{        
+        padding: 5px 10px;
+    }
+    .mobile-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        background: white;
+        border-top: 1px solid rgb(219, 219, 219);
+    }
+    .mobile-footer a{
+        text-decoration: none;
+        color: indianred;
+        text-transform: uppercase;
+        font-size: 16px;
+        position: static;
+    }
+    .mobile-footer a:hover{
+        color: rgb(255, 255, 255);
+        padding: 15px;
+        transition: 1s;
+        border-radius: 5px;
+        background-color: tomato;
+    }
+    #category-name{
+        font-size: 25px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    #item-card{
+        width: 150px;
+        height: 200px;
+    }
+    #item-card img{
+        width: 100px;
+        height: 100px;
+    }
+    #item-name,#item-price{
+        font-size: 16px;
+    }
+    .list-card{
+        flex-direction: column;
+    }
+    #cart-page{
+        margin: 3px 0;
+        padding: 10px 5px;
+        padding-bottom: 30px;
+        border-top: 1px solid rgb(219, 219, 219);
+    }
+    #cart-page table thead td{
+        font-size: 20px;
+    }
+    #cart-page table tbody td{
+        font-size: 18px;
+    }
+    #cart-page table tbody img{
+        width: 60px;
+        height: 60px;
+    }
+    #cart-title{
+        font-size: 25px;
+        display: inline-block;
+    }
+    #m-total-amount{
+        display: inline-block;
+        color: lightcoral;
+        padding: 5px 10px;
+        margin: 0;
+        border:  1px solid lightcoral;
+    }
+    .cart-btn{
+        font-size: 14px;
+        background: lightcoral;
+        padding: 8px 15px;
+        margin: auto;
+    }
+    .btn-box{
+        text-align: center;
+    }
+}
+@media screen and (max-width : 400px) and (-webkit-min-device-pixel-ratio: 2){
+    #mobile-view{
+        min-height: -webkit-fill-available;
+    }
+    #item-card{
+        height: 200px;
+        width: 140px;
+    }
+    #food-items{
+        padding: 0;
+    }
+}
+/* confirm order form */
+/* The Modal (background) */
+.modal-co {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-co-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+/* The Close Button */
+.close-co {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-co:hover,
+.close-co:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Form Styles */
+.modal-co-content form {
+    display: flex;
+    flex-direction: column;
+}
+.modal-co-content label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+.modal-co-content input[type="text"],
+.modal-co-content input[type="email"],
+.modal-co-content input[type="tableno"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.modal-co-content input[type="submit"] {
+    background: crimson;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal-co-content input[type="submit"]:hover {
+    background: darkred;
+}

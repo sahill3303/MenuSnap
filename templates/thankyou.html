@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks for Ordering</title>
+    <link rel="stylesheet" href="/static/thankyou.css">
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-box">
+            <!-- Logo at the top -->
+            <img src="/static/images/QRblank.png" alt="Company Logo" class="logo">
+            <h1>Thank you for ordering with MenuSnap!</h1>
+            <p>Please show the Order Details at the counter for payment and enjoy your meal!</p>
+            <div class="order-details">
+                <h3>Order Details</h3>
+                <p>Name: <span id="name">{{order.name}}</span></p>
+                <p>Table No: <span id="table-no">{{order.table_no}}</span></p>
+                <p>Total Price: <span id="total">{{order.total}}</span></p>
+                
+            </div>
+
+            <div class="btn-box">
+                <button id="order-again" onclick="orderAgain()">Order Again</button>
+                <button class="download-bill"><a href="{% url 'download_order_bill' order.id %}" class="download-bill">Download Bill</a></button>
+            </div>
+
+        </div>
+    </div>
+    <script src="/static/thankyou.js"></script>
+</body>
+</html>
